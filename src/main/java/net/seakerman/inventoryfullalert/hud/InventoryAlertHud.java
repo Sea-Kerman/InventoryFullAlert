@@ -48,6 +48,9 @@ public class InventoryAlertHud
     {
         int x = inventoryAlertConfigData.x;
         int y = inventoryAlertConfigData.y;
+        int crosshairx = inventoryAlertConfigData.crosshairx;
+        int crosshairy = inventoryAlertConfigData.crosshairy;
+
         int lowThreshold = inventoryAlertConfigData.lowThreshold;
         int midThreshold = inventoryAlertConfigData.midThreshold;
         int highThreshold = inventoryAlertConfigData.highThreshold;
@@ -70,6 +73,7 @@ public class InventoryAlertHud
                     inventoryAlertConfigData.color4_green,
                     inventoryAlertConfigData.color4_blue,
                     inventoryAlertConfigData.color4_alpha));
+
         }
         else if (fillAmount >= midThreshold)
         {
@@ -89,7 +93,13 @@ public class InventoryAlertHud
         //render the bar
         TextRenderer fontRenderer = MinecraftClient.getInstance().textRenderer;
         if (fontRenderer != null)
-            fontRenderer.drawWithShadow(matrixStack,outputString,x,y,color);
+        {
+            fontRenderer.drawWithShadow(matrixStack, outputString, x, y, color);
+
+            if (inventoryAlertConfigData.crosshairWarning && fillAmount >= highThreshold) {
+                fontRenderer.drawWithShadow(matrixStack, "|__|", crosshairx, crosshairy, color);
+            }
+        }
     }
 
     private static int getColorFromRGBA(Color tempcolor)

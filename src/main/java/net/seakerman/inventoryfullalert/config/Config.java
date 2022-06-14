@@ -10,7 +10,12 @@ public class Config
     public int x = 50;
     public int y = 50;
 
-    public int barWidth = 80;
+    public int crosshairx = 100;
+    public int crosshairy = 100;
+
+    public int barWidth = 108;
+
+    public boolean crosshairWarning = true;
 
     public int lowThreshold = 27;
     public int midThreshold = 33;
