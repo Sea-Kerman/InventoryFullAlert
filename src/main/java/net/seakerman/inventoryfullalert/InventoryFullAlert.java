@@ -14,8 +14,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class InventoryFullAlert implements ClientModInitializer {
-public static Config inventoryAlertConfigData;
-public static InventoryAlertHud hudInfo;
+	public static Config inventoryAlertConfigData;
+	public static InventoryAlertHud hudInfo;
 
 	@Override
 	public void onInitializeClient() {

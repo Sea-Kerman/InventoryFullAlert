@@ -50,8 +50,9 @@ public class InventoryAlertHud
     {
         int x = inventoryAlertConfigData.x;
         int y = inventoryAlertConfigData.y;
-        int lowThreshold = 33;
-        int highThreshold = 36;
+        int lowThreshold = inventoryAlertConfigData.lowThreshold;
+        int midThreshold = inventoryAlertConfigData.midThreshold;
+        int highThreshold = inventoryAlertConfigData.highThreshold;
 
         int fillAmount = getInventoryFillStatus();
 
@@ -61,15 +62,15 @@ public class InventoryAlertHud
         int color = inventoryAlertConfigData.color1;
         if (fillAmount >= highThreshold)
         {
-            //not sure what these were meant to be
-            //color = Colors.lightRed;
-            color = Color.RED.getRGB();
+            color = inventoryAlertConfigData.color4;
+        }
+        else if (fillAmount >= midThreshold)
+        {
+            color = inventoryAlertConfigData.color3;
         }
         else if (fillAmount >= lowThreshold)
         {
-            //not sure what these were meant to be
-            //color = Colors.lightYellow;
-            color = Color.YELLOW.getRGB();
+            color = inventoryAlertConfigData.color2;
         }
         TextRenderer fontRenderer = MinecraftClient.getInstance().textRenderer;
         if (fontRenderer != null)
