@@ -3,8 +3,8 @@
   "id": "inventoryfullalert",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "InventoryFullAlert",
+  "description": "Warns you when your inventory's full",
   "authors": [
     "Sea Kerman"
   ],
@@ -18,7 +18,7 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
+    "client": [
       "net.seakerman.inventoryfullalert.InventoryFullAlert"
     ]
   },
