@@ -1,6 +1,7 @@
 package net.seakerman.inventoryfullalert;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.minecraft.client.MinecraftClient;
 import net.seakerman.inventoryfullalert.config.Config;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -14,7 +15,7 @@ import java.io.IOException;
 
 public class InventoryFullAlert implements ClientModInitializer {
 public static Config inventoryAlertConfigData;
-public InventoryAlertHud hudInfo;
+public static InventoryAlertHud hudInfo;
 
 	@Override
 	public void onInitializeClient() {
@@ -23,7 +24,7 @@ public InventoryAlertHud hudInfo;
 
 		System.out.println("InventoryFullAlert started.");
 		ifa$loadConfig();
-		this.hudInfo = new InventoryAlertHud(client);
+		this.hudInfo = new InventoryAlertHud();
 
 	}
 

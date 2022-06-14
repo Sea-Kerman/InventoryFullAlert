@@ -13,6 +13,10 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 
+import java.awt.*;
+
+import static net.seakerman.inventoryfullalert.InventoryFullAlert.inventoryAlertConfigData;
+
 @Environment(EnvType.CLIENT)
 public class InventoryAlertHud
 {
@@ -22,9 +26,9 @@ public class InventoryAlertHud
     private MatrixStack matrixStack;
     private final ItemRenderer itemRenderer;
 
-    public InventoryAlertHud(MinecraftClient client)
+    public InventoryAlertHud()
     {
-        this.client = client;
+        this.client = MinecraftClient.getInstance();
         this.fontRenderer = client.textRenderer;
         this.itemRenderer = client.getItemRenderer();
     }
@@ -57,11 +61,15 @@ public class InventoryAlertHud
         int color = inventoryAlertConfigData.color1;
         if (fillAmount >= highThreshold)
         {
-            color = Colors.lightRed;
+            //not sure what these were meant to be
+            //color = Colors.lightRed;
+            color = Color.RED.getRGB();
         }
         else if (fillAmount >= lowThreshold)
         {
-            color = Colors.lightYellow;
+            //not sure what these were meant to be
+            //color = Colors.lightYellow;
+            color = Color.YELLOW.getRGB();
         }
 
         this.fontRenderer.draw(this.matrixStack,outputString,x,y,color);
