@@ -28,9 +28,9 @@ public class InventoryAlertHud
 
     //public InventoryAlertHud()
     //{
-        //this.client = MinecraftClient.getInstance();
-        //this.fontRenderer = MinecraftClient.getInstance().textRenderer;
-        //this.itemRenderer = MinecraftClient.getInstance().getItemRenderer();
+    //this.client = MinecraftClient.getInstance();
+    //this.fontRenderer = MinecraftClient.getInstance().textRenderer;
+    //this.itemRenderer = MinecraftClient.getInstance().getItemRenderer();
     //}
 
     public static void draw(MatrixStack matrixStack)
@@ -52,28 +52,51 @@ public class InventoryAlertHud
         int midThreshold = inventoryAlertConfigData.midThreshold;
         int highThreshold = inventoryAlertConfigData.highThreshold;
 
+        int barWidth = inventoryAlertConfigData.barWidth;
+
         int fillAmount = getInventoryFillStatus();
 
-        String outputString = generateStatusBarString(fillAmount,80);
+        String outputString = generateStatusBarString(fillAmount,barWidth);
 
         //get correct bar color
-        int color = inventoryAlertConfigData.color1;
+        int color = getColorFromRGBA(new Color(inventoryAlertConfigData.color1_red,
+                                                inventoryAlertConfigData.color1_green,
+                                                inventoryAlertConfigData.color1_blue,
+                                                inventoryAlertConfigData.color1_alpha));
+
         if (fillAmount >= highThreshold)
         {
-            color = inventoryAlertConfigData.color4;
+            color = getColorFromRGBA(new Color(inventoryAlertConfigData.color4_red,
+                    inventoryAlertConfigData.color4_green,
+                    inventoryAlertConfigData.color4_blue,
+                    inventoryAlertConfigData.color4_alpha));
         }
         else if (fillAmount >= midThreshold)
         {
-            color = inventoryAlertConfigData.color3;
+            color = getColorFromRGBA(new Color(inventoryAlertConfigData.color3_red,
+                    inventoryAlertConfigData.color3_green,
+                    inventoryAlertConfigData.color3_blue,
+                    inventoryAlertConfigData.color3_alpha));
         }
         else if (fillAmount >= lowThreshold)
         {
-            color = inventoryAlertConfigData.color2;
+            color = getColorFromRGBA(new Color(inventoryAlertConfigData.color2_red,
+                    inventoryAlertConfigData.color2_green,
+                    inventoryAlertConfigData.color2_blue,
+                    inventoryAlertConfigData.color2_alpha));
         }
+
+        //render the bar
         TextRenderer fontRenderer = MinecraftClient.getInstance().textRenderer;
         if (fontRenderer != null)
-            fontRenderer.draw(matrixStack,outputString,x,y,color);
+            fontRenderer.drawWithShadow(matrixStack,outputString,x,y,color);
     }
+
+    private static int getColorFromRGBA(Color tempcolor)
+    {
+        return (tempcolor.getRGB() & 0x00ffffff) | (tempcolor.getAlpha() << 24);
+    }
+
     private static int getInventoryFillStatus()
     {
         int fullslots = 0;
