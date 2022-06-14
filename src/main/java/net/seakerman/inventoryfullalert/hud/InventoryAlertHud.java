@@ -1,5 +1,7 @@
 package net.seakerman.inventoryfullalert.hud;
 
+import net.seakerman.inventoryfullalert.config.Config;
+import net.seakerman.inventoryfullalert.InventoryFullAlert;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -10,9 +12,6 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
-import net.seakerman.inventoryfullalert.config.Config;
-
-
 
 @Environment(EnvType.CLIENT)
 public class InventoryAlertHud
@@ -45,8 +44,8 @@ public class InventoryAlertHud
 
     private void drawInfo()
     {
-        int x = 50;
-        int y = 50;
+        int x = inventoryAlertConfigData.x;
+        int y = inventoryAlertConfigData.y;
         int lowThreshold = 33;
         int highThreshold = 36;
 
@@ -55,7 +54,7 @@ public class InventoryAlertHud
         String outputString = generateStatusBarString(fillAmount,80);
 
         //get correct bar color
-        int color = Config.color1;
+        int color = inventoryAlertConfigData.color1;
         if (fillAmount >= highThreshold)
         {
             color = Colors.lightRed;

@@ -5,6 +5,7 @@ import net.seakerman.inventoryfullalert.config.Config;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.fabricmc.loader.api.FabricLoader;
+import net.seakerman.inventoryfullalert.hud.InventoryAlertHud;
 
 import java.io.File;
 import java.io.FileReader;
@@ -13,6 +14,7 @@ import java.io.IOException;
 
 public class InventoryFullAlert implements ClientModInitializer {
 public static Config inventoryAlertConfigData;
+public InventoryAlertHud hudInfo;
 
 	@Override
 	public void onInitializeClient() {
@@ -21,6 +23,7 @@ public static Config inventoryAlertConfigData;
 
 		System.out.println("InventoryFullAlert started.");
 		ifa$loadConfig();
+		this.hudInfo = new InventoryAlertHud(client);
 
 	}
 
@@ -28,7 +31,7 @@ public static Config inventoryAlertConfigData;
 	// config code based on bedrockify & actually unbreaking fabric config code
 	// https://github.com/juancarloscp52/BedrockIfy/blob/1.17.x/src/main/java/me/juancarloscp52/bedrockify/Bedrockify.java
 	// https://github.com/wutdahack/ActuallyUnbreakingFabric/blob/1.18.1/src/main/java/wutdahack/actuallyunbreaking/ActuallyUnbreaking.java
-	public void ifa$loadConfig() {
+	public static void ifa$loadConfig() {
 		File config = new File(FabricLoader.getInstance().getConfigDir().toFile(), "inventoryfullalert.json");
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		if (config.exists()) {

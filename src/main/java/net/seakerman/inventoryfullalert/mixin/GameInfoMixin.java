@@ -17,7 +17,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = InGameHud.class)
 public abstract class GameInfoMixin
 {
-	private InventoryAlertHud hudInfo;
 
 	@Shadow
 	@Final
@@ -28,11 +27,10 @@ public abstract class GameInfoMixin
 	{
 		// Start Mixin
 		System.out.println("Init Inventory Monitoring Mixin");
-		this.hudInfo = new InventoryAlertHud(client);
 	}
 	@Inject(method = "render", at = @At("HEAD"))
 	private void onDraw(MatrixStack matrixStack, float esp, CallbackInfo ci) {
-		if (!this.client.options.debugEnabled) {
+		if (!this.client.options.debugEnabled && !inventoryAlertConfigData == null) {
 			// Draw Game info on every GameHud render
 			this.hudInfo.draw(matrixStack);
 		}
