@@ -13,6 +13,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import static net.seakerman.inventoryfullalert.InventoryFullAlert.hudInfo;
+import static net.seakerman.inventoryfullalert.InventoryFullAlert.inventoryAlertConfigData;
+
 @Environment(EnvType.CLIENT)
 @Mixin(value = InGameHud.class)
 public abstract class GameInfoMixin
@@ -22,17 +25,18 @@ public abstract class GameInfoMixin
 	@Final
 	private MinecraftClient client;
 
-	@Inject(method = "<init>(Lnet/minecraft/client/MinecraftClient;)V", at = @At(value = "RETURN"))
-	private void onInit(MinecraftClient client, CallbackInfo ci)
-	{
-		// Start Mixin
-		System.out.println("Init Inventory Monitoring Mixin");
-	}
+	//unneeded
+//	@Inject(method = "<init>(Lnet/minecraft/client/MinecraftClient;)V", at = @At(value = "RETURN"))
+//	private void onInit(MinecraftClient client, CallbackInfo ci)
+//	{
+//		// Start Mixin
+//		System.out.println("Init Inventory Monitoring Mixin");
+//	}
 	@Inject(method = "render", at = @At("HEAD"))
 	private void onDraw(MatrixStack matrixStack, float esp, CallbackInfo ci) {
-		if (!this.client.options.debugEnabled && !inventoryAlertConfigData == null) {
+		if (!this.client.options.debugEnabled && !(inventoryAlertConfigData == null)) {
 			// Draw Game info on every GameHud render
-			this.hudInfo.draw(matrixStack);
+			hudInfo.draw(matrixStack);
 		}
 	}
 }
