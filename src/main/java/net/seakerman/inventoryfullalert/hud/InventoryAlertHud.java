@@ -71,8 +71,9 @@ public class InventoryAlertHud
             //color = Colors.lightYellow;
             color = Color.YELLOW.getRGB();
         }
-
-        this.fontRenderer.draw(this.matrixStack,outputString,x,y,color);
+        TextRenderer fontRenderer = MinecraftClient.getInstance().textRenderer;
+        if (fontRenderer != null)
+            fontRenderer.draw(this.matrixStack,outputString,x,y,color);
     }
     private int getInventoryFillStatus()
     {
