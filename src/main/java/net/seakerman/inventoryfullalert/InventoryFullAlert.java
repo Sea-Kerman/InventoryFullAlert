@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class InventoryFullAlert implements ClientModInitializer {
 	public static Config inventoryAlertConfigData;
-	public static InventoryAlertHud hudInfo;
+	//public static InventoryAlertHud hudInfo;
 
 	@Override
 	public void onInitializeClient() {
@@ -24,7 +24,7 @@ public class InventoryFullAlert implements ClientModInitializer {
 
 		System.out.println("InventoryFullAlert started.");
 		ifa$loadConfig();
-		this.hudInfo = new InventoryAlertHud();
+		//this.hudInfo = new InventoryAlertHud();
 
 	}
 

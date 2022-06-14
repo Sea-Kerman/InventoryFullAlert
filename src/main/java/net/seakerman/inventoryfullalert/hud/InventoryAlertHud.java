@@ -20,33 +20,31 @@ import static net.seakerman.inventoryfullalert.InventoryFullAlert.inventoryAlert
 @Environment(EnvType.CLIENT)
 public class InventoryAlertHud
 {
-    private final MinecraftClient client;
-    private final TextRenderer fontRenderer;
-    private ClientPlayerEntity player;
-    private MatrixStack matrixStack;
-    private final ItemRenderer itemRenderer;
+    //private final MinecraftClient client;
+    //private final TextRenderer fontRenderer;
 
-    public InventoryAlertHud()
+    //private MatrixStack matrixStack;
+    //private final ItemRenderer itemRenderer;
+
+    //public InventoryAlertHud()
+    //{
+        //this.client = MinecraftClient.getInstance();
+        //this.fontRenderer = MinecraftClient.getInstance().textRenderer;
+        //this.itemRenderer = MinecraftClient.getInstance().getItemRenderer();
+    //}
+
+    public static void draw(MatrixStack matrixStack)
     {
-        this.client = MinecraftClient.getInstance();
-        this.fontRenderer = client.textRenderer;
-        this.itemRenderer = client.getItemRenderer();
-    }
 
-    public void draw(MatrixStack matrixStack)
-    {
-        this.player = this.client.player;
-
-        this.matrixStack = matrixStack;
 
         RenderSystem.enableBlend();
 
-        this.drawInfo();
+        drawInfo(matrixStack);
 
-        this.client.getProfiler().pop();
+        MinecraftClient.getInstance().getProfiler().pop();
     }
 
-    private void drawInfo()
+    private static void drawInfo(MatrixStack matrixStack)
     {
         int x = inventoryAlertConfigData.x;
         int y = inventoryAlertConfigData.y;
@@ -74,21 +72,25 @@ public class InventoryAlertHud
         }
         TextRenderer fontRenderer = MinecraftClient.getInstance().textRenderer;
         if (fontRenderer != null)
-            fontRenderer.draw(this.matrixStack,outputString,x,y,color);
+            fontRenderer.draw(matrixStack,outputString,x,y,color);
     }
-    private int getInventoryFillStatus()
+    private static int getInventoryFillStatus()
     {
         int fullslots = 0;
-        PlayerInventory inventory = this.player.getInventory();
-        for (int i = 0; i < 36; i++) {
-            if (!inventory.getStack(i).equals(ItemStack.EMPTY))
-            {
-                fullslots ++;
+        ClientPlayerEntity player = MinecraftClient.getInstance().player;
+        if (player != null) {
+            PlayerInventory inventory = player.getInventory();
+            if (inventory != null) {
+                for (int i = 0; i < 36; i++) {
+                    if (inventory.getStack(i).isEmpty()) {
+                        fullslots++;
+                    }
+                }
             }
         }
         return fullslots;
     }
-    private String generateStatusBarString(int fillAmount, int width)
+    private static String generateStatusBarString(int fillAmount, int width)
     {
         float barLength = (fillAmount/36f) * width;
         float barEmptyLength = (36-fillAmount)/36f * width;

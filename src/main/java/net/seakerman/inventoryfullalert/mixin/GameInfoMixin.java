@@ -13,7 +13,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static net.seakerman.inventoryfullalert.InventoryFullAlert.hudInfo;
 import static net.seakerman.inventoryfullalert.InventoryFullAlert.inventoryAlertConfigData;
 
 @Environment(EnvType.CLIENT)
@@ -34,9 +33,9 @@ public abstract class GameInfoMixin
 //	}
 	@Inject(method = "render", at = @At("HEAD"))
 	private void onDraw(MatrixStack matrixStack, float esp, CallbackInfo ci) {
-		if (!this.client.options.debugEnabled && !(inventoryAlertConfigData == null)) {
+		if (!this.client.options.debugEnabled && inventoryAlertConfigData != null) {
 			// Draw Game info on every GameHud render
-			hudInfo.draw(matrixStack);
+			InventoryAlertHud.draw(matrixStack);
 		}
 	}
 }
