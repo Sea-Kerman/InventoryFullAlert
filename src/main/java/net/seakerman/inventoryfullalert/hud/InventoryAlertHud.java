@@ -82,7 +82,7 @@ public class InventoryAlertHud
             PlayerInventory inventory = player.getInventory();
             if (inventory != null) {
                 for (int i = 0; i < 36; i++) {
-                    if (inventory.getStack(i).isEmpty()) {
+                    if (!inventory.getStack(i).isEmpty()) {
                         fullslots++;
                     }
                 }
