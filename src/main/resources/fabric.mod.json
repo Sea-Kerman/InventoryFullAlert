@@ -16,10 +16,13 @@
   "license": "MIT",
   "icon": "assets/modid/icon.png",
 
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "client": [
       "net.seakerman.inventoryfullalert.InventoryFullAlert"
+    ],
+    "modmenu": [
+      "net.seakerman.inventoryfullalert.config.IFAModMenu"
     ]
   },
   "mixins": [
@@ -33,6 +36,7 @@
     "java": ">=17"
   },
   "suggests": {
-    "another-mod": "*"
+    "modmenu": ">=3",
+    "clothconfig": ">=6.0"
   }
 }
