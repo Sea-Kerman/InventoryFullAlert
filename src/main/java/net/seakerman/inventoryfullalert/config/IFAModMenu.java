@@ -8,7 +8,7 @@ import net.minecraft.client.MinecraftClient;
 import org.apache.logging.log4j.LogManager;
 
 @Environment(EnvType.CLIENT)
-public class IFAModMenu implements ModMenuAPI
+public class IFAModMenu implements ModMenuApi
 {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {

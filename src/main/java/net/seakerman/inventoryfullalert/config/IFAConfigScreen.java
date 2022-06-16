@@ -89,7 +89,7 @@ public class IFAConfigScreen
                 .build()); // Builds the option entry for cloth config)
 
         //Color 1
-        SubCategoryBuilder color1Settings = entryBuilder.startSubCategory(Text.of("Color 1"));
+        SubCategoryBuilder color1Settings = entryBuilder.startSubCategory(Text.of("Color 1")).setTooltip(Text.of("The color displayed when the inventory is below the low threshold"));
         color1Settings.add(entryBuilder.startIntField(Text.of("R"),inventoryAlertConfigData.color1_red)
                 .setDefaultValue(0) // Recommended: Used when user click "Reset"
                 .setTooltip(Text.of("Red Value of Color 1")) // Optional: Shown when the user hover over this option
@@ -106,10 +106,84 @@ public class IFAConfigScreen
                 .setSaveConsumer(newValue -> inventoryAlertConfigData.color1_blue = newValue) // Recommended: Called when user save the config
                 .build()); // Builds the option entry for cloth config)
         color1Settings.add(entryBuilder.startIntField(Text.of("A"),inventoryAlertConfigData.color1_alpha)
-                .setDefaultValue(36) // Recommended: Used when user click "Reset"
+                .setDefaultValue(255) // Recommended: Used when user click "Reset"
                 .setTooltip(Text.of("Alpha Value of Color 1")) // Optional: Shown when the user hover over this option
                 .setSaveConsumer(newValue -> inventoryAlertConfigData.color1_alpha = newValue) // Recommended: Called when user save the config
                 .build()); // Builds the option entry for cloth config)
+        category.addEntry(color1Settings.build());
+
+        //Color 2
+        SubCategoryBuilder color2Settings = entryBuilder.startSubCategory(Text.of("Color 2")).setTooltip(Text.of("The color displayed when inventory is above the low threshold but below the mid"));
+        color2Settings.add(entryBuilder.startIntField(Text.of("R"),inventoryAlertConfigData.color2_red)
+                .setDefaultValue(220) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.of("Red Value of Color 2")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> inventoryAlertConfigData.color2_red = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config)
+        color2Settings.add(entryBuilder.startIntField(Text.of("G"),inventoryAlertConfigData.color2_green)
+                .setDefaultValue(200) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.of("Green Value of Color 2")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> inventoryAlertConfigData.color2_green = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config)
+        color2Settings.add(entryBuilder.startIntField(Text.of("B"),inventoryAlertConfigData.color2_blue)
+                .setDefaultValue(0) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.of("Blue Value of Color 2")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> inventoryAlertConfigData.color2_blue = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config)
+        color2Settings.add(entryBuilder.startIntField(Text.of("A"),inventoryAlertConfigData.color2_alpha)
+                .setDefaultValue(255) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.of("Alpha Value of Color 2")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> inventoryAlertConfigData.color2_alpha = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config)
+        category.addEntry(color2Settings.build());
+
+        //Color 3
+        SubCategoryBuilder color3Settings = entryBuilder.startSubCategory(Text.of("Color 3")).setTooltip(Text.of("The color displayed when inventory is above the mid threshold but below the high"));
+        color3Settings.add(entryBuilder.startIntField(Text.of("R"),inventoryAlertConfigData.color3_red)
+                .setDefaultValue(250) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.of("Red Value of Color 3")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> inventoryAlertConfigData.color3_red = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config)
+        color3Settings.add(entryBuilder.startIntField(Text.of("G"),inventoryAlertConfigData.color3_green)
+                .setDefaultValue(170) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.of("Green Value of Color 3")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> inventoryAlertConfigData.color3_green = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config)
+        color3Settings.add(entryBuilder.startIntField(Text.of("B"),inventoryAlertConfigData.color3_blue)
+                .setDefaultValue(0) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.of("Blue Value of Color 3")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> inventoryAlertConfigData.color3_blue = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config)
+        color3Settings.add(entryBuilder.startIntField(Text.of("A"),inventoryAlertConfigData.color3_alpha)
+                .setDefaultValue(255) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.of("Alpha Value of Color 3")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> inventoryAlertConfigData.color3_alpha = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config)
+        category.addEntry(color3Settings.build());
+
+        //Color 4
+        SubCategoryBuilder color4Settings = entryBuilder.startSubCategory(Text.of("Color 4")).setTooltip(Text.of("The color displayed when inventory is above the high threshold"));
+        color4Settings.add(entryBuilder.startIntField(Text.of("R"),inventoryAlertConfigData.color4_red)
+                .setDefaultValue(220) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.of("Red Value of Color 2")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> inventoryAlertConfigData.color4_red = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config)
+        color4Settings.add(entryBuilder.startIntField(Text.of("G"),inventoryAlertConfigData.color4_green)
+                .setDefaultValue(0) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.of("Green Value of Color 2")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> inventoryAlertConfigData.color4_green = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config)
+        color4Settings.add(entryBuilder.startIntField(Text.of("B"),inventoryAlertConfigData.color4_blue)
+                .setDefaultValue(0) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.of("Blue Value of Color 2")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> inventoryAlertConfigData.color4_blue = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config)
+        color4Settings.add(entryBuilder.startIntField(Text.of("A"),inventoryAlertConfigData.color4_alpha)
+                .setDefaultValue(255) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.of("Alpha Value of Color 2")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> inventoryAlertConfigData.color4_alpha = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config)
+        category.addEntry(color4Settings.build());
+
         return builder.setTransparentBackground(isTransparent).build();
     }
 }
