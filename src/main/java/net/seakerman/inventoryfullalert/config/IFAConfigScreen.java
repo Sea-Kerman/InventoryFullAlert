@@ -110,5 +110,6 @@ public class IFAConfigScreen
                 .setTooltip(Text.of("Alpha Value of Color 1")) // Optional: Shown when the user hover over this option
                 .setSaveConsumer(newValue -> inventoryAlertConfigData.color1_alpha = newValue) // Recommended: Called when user save the config
                 .build()); // Builds the option entry for cloth config)
+        return return builder.setTransparentBackground(isTransparent).build();
     }
 }

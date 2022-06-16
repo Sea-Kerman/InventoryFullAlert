@@ -25,10 +25,11 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	modApi("me.shedaniel.cloth:cloth-config-fabric:>=6.2.57") {
+	modApi("me.shedaniel.cloth:cloth-config-fabric:>=6.0.0") {
+		exclude(group: "net.fabricmc.fabric-api")
 	}
 
-	modImplementation("com.terraformersmc:modmenu:>=3.1.1") {
+	modImplementation("io.github.prospector:modmenu:>=3.1.1") {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 
