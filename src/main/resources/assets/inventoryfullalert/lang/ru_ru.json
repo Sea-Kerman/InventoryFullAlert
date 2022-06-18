@@ -17,5 +17,8 @@
     "text.autoconfig.inventoryfullalert.option.noThresholdColor": "Цвет индикатора при отсутсвии порога",
     "text.autoconfig.inventoryfullalert.option.lowThresholdColor": "Цвет индикатора при низком пороге",
     "text.autoconfig.inventoryfullalert.option.midThresholdColor": "Цвет индикатора при среднем пороге",
-    "text.autoconfig.inventoryfullalert.option.highThresholdColor": "Цвет индикатора при высоком пороге"
+    "text.autoconfig.inventoryfullalert.option.highThresholdColor": "Цвет индикатора при высоком пороге",
+
+    "modmenu.summaryTranslation.inventoryfullalert": "Индикатор, который показывает, насколько заполнен ваш инвентарь",
+    "modmenu.descriptionTranslation.inventoryfullalert": "Индикатор, который показывает, насколько заполнен ваш инвентарь"
 }

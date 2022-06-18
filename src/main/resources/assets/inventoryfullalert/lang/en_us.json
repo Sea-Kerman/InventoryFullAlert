@@ -17,5 +17,8 @@
     "text.autoconfig.inventoryfullalert.option.noThresholdColor": "No threshold bar color",
     "text.autoconfig.inventoryfullalert.option.lowThresholdColor": "Low threshold color",
     "text.autoconfig.inventoryfullalert.option.midThresholdColor": "Medium threshold color",
-    "text.autoconfig.inventoryfullalert.option.highThresholdColor": "High threshold color"
+    "text.autoconfig.inventoryfullalert.option.highThresholdColor": "High threshold color",
+
+    "modmenu.summaryTranslation.inventoryfullalert": "A status bar that shows how full your inventory is",
+    "modmenu.descriptionTranslation.inventoryfullalert": "A status bar that shows how full your inventory is"
 }
