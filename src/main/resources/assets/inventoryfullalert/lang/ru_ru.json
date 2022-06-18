@@ -1,0 +1,21 @@
+{
+    "text.autoconfig.inventoryfullalert.title": "Настройки InventoryFullAlert",
+    "text.autoconfig.inventoryfullalert.option.barOffsetX": "Смещение индикатора по X",
+    "text.autoconfig.inventoryfullalert.option.barOffsetX.@Tooltip": "Рекомендуемое значение: 0.5",
+    "text.autoconfig.inventoryfullalert.option.barOffsetY": "Смещение индикатора по Y",
+    "text.autoconfig.inventoryfullalert.option.barOffsetY.@Tooltip": "Рекомендуемое значение: 0.9",
+    "text.autoconfig.inventoryfullalert.option.barWidth": "Длина индикатора",
+    "text.autoconfig.inventoryfullalert.option.barWidth.@Tooltip": "Рекомендуемое значение: 108",
+    "text.autoconfig.inventoryfullalert.option.crosshairWarning": "Предупреждение возле прицела",
+    "text.autoconfig.inventoryfullalert.option.crosshairWarning.@Tooltip": "Отображает предупреждение если ваш инвентарь заполнен",
+    "text.autoconfig.inventoryfullalert.option.lowThreshold": "Низкий порог",
+    "text.autoconfig.inventoryfullalert.option.lowThreshold.@Tooltip": "Лимит занятых ячеек инвентаря, который считаться  \"низким порогом\"",
+    "text.autoconfig.inventoryfullalert.option.midThreshold": "Средний порог",
+    "text.autoconfig.inventoryfullalert.option.midThreshold.@Tooltip": "Лимит занятых ячеек инвентаря, который считаться  \"средним порогом\"",
+    "text.autoconfig.inventoryfullalert.option.highThreshold": "Высокий порог",
+    "text.autoconfig.inventoryfullalert.option.highThreshold.@Tooltip": "Лимит занятых ячеек инвентаря, который считаться  \"высоким порогом\"",
+    "text.autoconfig.inventoryfullalert.option.noThresholdColor": "Цвет индикатора при отсутсвии порога",
+    "text.autoconfig.inventoryfullalert.option.lowThresholdColor": "Цвет индикатора при низком пороге",
+    "text.autoconfig.inventoryfullalert.option.midThresholdColor": "Цвет индикатора при среднем пороге",
+    "text.autoconfig.inventoryfullalert.option.highThresholdColor": "Цвет индикатора при высоком пороге"
+}

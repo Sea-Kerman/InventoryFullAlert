@@ -1,0 +1,21 @@
+{
+    "text.autoconfig.inventoryfullalert.title": "InventoryFullAlert config",
+    "text.autoconfig.inventoryfullalert.option.barOffsetX": "X bar offset",
+    "text.autoconfig.inventoryfullalert.option.barOffsetX.@Tooltip": "Recommended value: 0.5",
+    "text.autoconfig.inventoryfullalert.option.barOffsetY": "Y bar offset",
+    "text.autoconfig.inventoryfullalert.option.barOffsetY.@Tooltip": "Recommended value: 0.9",
+    "text.autoconfig.inventoryfullalert.option.barWidth": "Bar width",
+    "text.autoconfig.inventoryfullalert.option.barWidth.@Tooltip": "Recommended value: 108",
+    "text.autoconfig.inventoryfullalert.option.crosshairWarning": "Crosshair warning",
+    "text.autoconfig.inventoryfullalert.option.crosshairWarning.@Tooltip": "Shows up warning if your inventory is full",
+    "text.autoconfig.inventoryfullalert.option.lowThreshold": "Low threshold",
+    "text.autoconfig.inventoryfullalert.option.lowThreshold.@Tooltip": "A limit of non-empty inventory slots that counts as \"low threshold\"",
+    "text.autoconfig.inventoryfullalert.option.midThreshold": "Medium threshold",
+    "text.autoconfig.inventoryfullalert.option.midThreshold.@Tooltip": "A limit of non-empty inventory slots that counts as \"medium threshold\"",
+    "text.autoconfig.inventoryfullalert.option.highThreshold": "High threshold",
+    "text.autoconfig.inventoryfullalert.option.highThreshold.@Tooltip": "A limit of non-empty inventory slots that counts as \"high threshold\"",
+    "text.autoconfig.inventoryfullalert.option.noThresholdColor": "No threshold bar color",
+    "text.autoconfig.inventoryfullalert.option.lowThresholdColor": "Low threshold color",
+    "text.autoconfig.inventoryfullalert.option.midThresholdColor": "Medium threshold color",
+    "text.autoconfig.inventoryfullalert.option.highThresholdColor": "High threshold color"
+}
