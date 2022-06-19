@@ -6,7 +6,8 @@
   "name": "InventoryFullAlert",
   "description": "A status bar that shows how full your inventory is",
   "authors": [
-    "Sea Kerman"
+    "Sea Kerman",
+    "Traben"
   ],
   "contact": {
     "homepage": "https://github.com/Sea-Kerman/InventoryFullAlert",
