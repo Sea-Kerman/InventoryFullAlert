@@ -7,7 +7,7 @@
     "text.autoconfig.inventoryfullalert.option.barWidth": "Bar width",
     "text.autoconfig.inventoryfullalert.option.barWidth.@Tooltip": "Recommended value: 108",
     "text.autoconfig.inventoryfullalert.option.crosshairWarning": "Crosshair warning",
-    "text.autoconfig.inventoryfullalert.option.crosshairWarning.@Tooltip": "Shows up warning if your inventory is full",
+    "text.autoconfig.inventoryfullalert.option.crosshairWarning.@Tooltip": "Shows a warning if your inventory is full",
     "text.autoconfig.inventoryfullalert.option.lowThreshold": "Low threshold",
     "text.autoconfig.inventoryfullalert.option.lowThreshold.@Tooltip": "A limit of non-empty inventory slots that counts as \"low threshold\"",
     "text.autoconfig.inventoryfullalert.option.midThreshold": "Medium threshold",
