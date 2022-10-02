@@ -1,10 +1,5 @@
 package net.seakerman.inventoryfullalert.config;
 
-import net.seakerman.inventoryfullalert.hud.InventoryAlertHud;
-import net.seakerman.inventoryfullalert.InventoryFullAlert;
-
-import java.awt.*;
-
 public class Config
 {
     public int x = 50;
