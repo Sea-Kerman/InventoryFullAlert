@@ -27,8 +27,10 @@ public abstract class GameInfoMixin
 	@Inject(method = "render", at = @At("HEAD"))
 	private void onDraw(DrawContext context, float tickDelta, CallbackInfo ci) {
 		if (!this.client.options.debugEnabled && InventoryFullAlert.config != null) {
-			// Draw Game info on every GameHud render
-			InventoryAlertHud.draw(context);
+			if(InventoryFullAlert.config.onOff){
+				// Draw Game info on every GameHud render
+				InventoryAlertHud.draw(context);
+			}
 		}
 	}
 }

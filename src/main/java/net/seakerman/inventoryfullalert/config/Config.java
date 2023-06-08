@@ -2,6 +2,8 @@ package net.seakerman.inventoryfullalert.config;
 
 public class Config
 {
+    public boolean onOff = true;
+
     public int x = 50;
     public int y = 50;
 

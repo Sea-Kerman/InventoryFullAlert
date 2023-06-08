@@ -7,6 +7,9 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 @Config(name = "inventoryfullalert")
 public class ModConfig implements ConfigData {
 
+    @ConfigEntry.Gui.Tooltip
+    public boolean onOff = true;
+
     @ConfigEntry.Gui.Tooltip                    //setting hint that can be easily localized through lang files
     public float barOffsetX = 0.5f;
     @ConfigEntry.Gui.Tooltip

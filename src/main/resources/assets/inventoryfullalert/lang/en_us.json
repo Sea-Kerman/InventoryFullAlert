@@ -1,5 +1,7 @@
 {
     "text.autoconfig.inventoryfullalert.title": "InventoryFullAlert config",
+    "text.autoconfig.inventoryfullalert.option.onOff": "Toggle Rendering On and Off",
+    "text.autoconfig.inventoryfullalert.option.onOff.@Tooltip": "Yes is on and No is off",
     "text.autoconfig.inventoryfullalert.option.barOffsetX": "X bar offset",
     "text.autoconfig.inventoryfullalert.option.barOffsetX.@Tooltip": "Recommended value: 0.5",
     "text.autoconfig.inventoryfullalert.option.barOffsetY": "Y bar offset",
