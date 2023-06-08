@@ -5,7 +5,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
-import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 
@@ -14,16 +14,17 @@ import net.seakerman.inventoryfullalert.InventoryFullAlert;
 @Environment(EnvType.CLIENT)
 public class InventoryAlertHud
 {   
-    public static void draw(MatrixStack matrixStack)
+    public static void draw(DrawContext context)
     {
         RenderSystem.enableBlend();
-        drawInfo(matrixStack);
+        drawInfo(context);
 
         MinecraftClient.getInstance().getProfiler().pop();
     }
 
-    private static void drawInfo(MatrixStack matrixStack)
-    {   
+    private static void drawInfo(DrawContext context)
+    {
+
         int screenWidth = MinecraftClient.getInstance().getWindow().getScaledWidth();    // getScaledWidth() and getScaledHeight() return width and height
         int screenHeight = MinecraftClient.getInstance().getWindow().getScaledHeight();  // with applied scale factor
 
@@ -33,7 +34,7 @@ public class InventoryAlertHud
         int barWidth = InventoryFullAlert.config.barWidth;
 
         int barPosX = Math.round(screenWidth * barOffsetX) - barWidth;
-        float barPosY = Math.round(screenHeight * barOffsetY) - 3.5f;
+        int barPosY = Math.round((screenHeight * barOffsetY) - 3.5f);
 
         int crosshairX = Math.round(screenWidth * 0.5f);
         int crosshairY = Math.round(screenHeight * 0.5f);
@@ -66,11 +67,11 @@ public class InventoryAlertHud
         TextRenderer fontRenderer = MinecraftClient.getInstance().textRenderer;
         if (fontRenderer != null)
         {
-            fontRenderer.drawWithShadow(matrixStack, outputString, barPosX, barPosY, color);
+            context.drawText(fontRenderer, outputString, barPosX, barPosY, color, true);
 
             if (InventoryFullAlert.config.crosshairWarning && fillAmount >= highThreshold) {
-                fontRenderer.draw(matrixStack, "!", crosshairX - 8, crosshairY - 4, color);
-                fontRenderer.draw(matrixStack, "!", crosshairX + 6, crosshairY - 4, color);
+                context.drawText(fontRenderer,"!", crosshairX - 8, crosshairY - 4, color, false);
+                context.drawText(fontRenderer,"!", crosshairX + 6, crosshairY - 4, color, false);
             }
         }
     }
